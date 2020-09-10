@@ -1,18 +1,18 @@
 import React from 'react'
 
+import ListGroup from 'react-bootstrap/ListGroup'
 
-
-export default function Repositories({ lists}) {
+export default function Repositories({ lists }) {
 
   return (
-  <>
-    {lists.map((e) => (
-      <div key={e.id}>
-
-       {e.full_name}
-
-      </div>
-    ))}
-  </>
+    <>
+      {lists.map((e) => (
+        <ListGroup variant="flush" key={e.id}>
+          <ListGroup.Item >
+            {e.full_name}
+          </ListGroup.Item>
+        </ListGroup>
+      ))}
+    </>
   )
 }

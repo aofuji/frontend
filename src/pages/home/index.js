@@ -12,7 +12,6 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 
 // service
-
 import Service from '../../service/index'
 
 import Repositories from '../../components/repositories'
@@ -83,8 +82,8 @@ function Home() {
       <Header />
       <Container>
         <Row className="mt-2 justify-content-md-center">
-          <Col>
-            <InputGroup className="mb-3">
+          <Col sm={4}>
+            <InputGroup className="mb-3" >
               <FormControl
                 placeholder="Preencha o campo"
                 onChange={(e) => setUser(e.target.value)}
@@ -103,10 +102,15 @@ function Home() {
         <Row className="mt-5">
           <Col sm={12}>
             <Loading isLoading={isLoading} />
+            {
+              !isLoading ? <>
+                            <Repositories lists={repositories} />
+                            <Users lists={users} />
+                            <Starred lists={starred} />
+                          </> : <></>
 
-            <Repositories lists={repositories} />
-            <Users lists={users} />
-            <Starred lists={starred} />
+            }
+
           </Col>
         </Row>
 
