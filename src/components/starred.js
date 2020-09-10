@@ -3,7 +3,7 @@ import React from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 export default function Starred({ lists }) {
-  // console.log(lista)
+
   return (
     <>
       {lists.map((e) => (
