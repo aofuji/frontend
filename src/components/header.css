@@ -1,0 +1,26 @@
+
+nav {
+  height: 80px;
+  background-color:gray;
+  color: white;
+}
+
+.home {
+  font-size: large;
+  padding: 20px ;
+  text-decoration: none;
+}
+
+.home a {
+  color: white !important;
+}
+.home a:link {
+
+  text-decoration: none;
+  color: white;
+}
+
+.home a:hover {
+  text-decoration: none;
+  color: currentColor;
+}

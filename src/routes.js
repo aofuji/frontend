@@ -1,19 +1,24 @@
 import React from 'react';
 
+
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
 
-import Home from './home';
+//pages
+import Page404 from './pages/page404'
+import Home from './pages/home';
+import Detail from './pages/detail'
+
 
 const Routes = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
-
-      {/* <Route exact path="/teste" component={Teste} /> */}
+      <Route exact path="/:user" component={Detail} />
+      <Route path="*" component={Page404} />
     </Switch>
   </Router>
 );
