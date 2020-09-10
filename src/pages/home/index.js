@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-// import './App.css';
+import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -43,7 +43,7 @@ function Home() {
       setUsers([data])
       setrepositories([])
       setStarred([])
-      console.log(users)
+
       setIsLoading(false)
     } catch (error) {
       console.log(error)
@@ -54,7 +54,6 @@ function Home() {
     try {
       setIsLoading(true)
       const { data } = await Service.get(`/users/${user}/repos`)
-      console.log(data)
 
       setrepositories(data)
       setUsers([])
@@ -69,7 +68,6 @@ function Home() {
     try {
       setIsLoading(true)
       const { data } = await Service.get(`/users/${user}/starred`)
-      console.log(data)
 
       setStarred(data)
       setUsers([])
@@ -89,8 +87,6 @@ function Home() {
             <InputGroup className="mb-3">
               <FormControl
                 placeholder="Preencha o campo"
-                // aria-label="Recipient's username"
-                // aria-describedby="basic-addon2"
                 onChange={(e) => setUser(e.target.value)}
               />
               <InputGroup.Append>
@@ -98,8 +94,8 @@ function Home() {
               </InputGroup.Append>
             </InputGroup>
 
-            <Button variant="primary" className="mr-2" onClick={getRepo}>Repositorio</Button>
-            <Button variant="primary" onClick={getStarred}>Starred</Button>
+            <Button variant="light" className="btn-rd mr-2" onClick={getRepo}>Repositorios</Button>
+            <Button variant="light" className="btn-rd" onClick={getStarred}>Starred</Button>
 
           </Col>
         </Row>

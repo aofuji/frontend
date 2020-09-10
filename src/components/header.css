@@ -1,7 +1,7 @@
 
 nav {
   height: 80px;
-  background-color:gray;
+  background-color:rgb(60, 60, 60);
   color: white;
 }
 
@@ -9,6 +9,7 @@ nav {
   font-size: large;
   padding: 20px ;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .home a {
